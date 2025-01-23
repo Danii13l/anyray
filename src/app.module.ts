@@ -6,6 +6,7 @@ import { join } from 'path';
 import { UsersModule } from './users/users.module';
 import { LanguagesModule } from './languages/languages.module';
 import { CountriesModule } from './countries/countries.module';
+import { HubModule } from './hub/hub.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { CountriesModule } from './countries/countries.module';
     UsersModule,
     LanguagesModule,
     CountriesModule,
+    HubModule,
   ],
   controllers: [],
   providers: [AppService],
