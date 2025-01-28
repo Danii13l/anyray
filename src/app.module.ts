@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
@@ -7,6 +6,7 @@ import { UsersModule } from './users/users.module';
 import { LanguagesModule } from './languages/languages.module';
 import { CountriesModule } from './countries/countries.module';
 import { HubModule } from './hub/hub.module';
+import { LexemeModule } from './lexeme/lexeme.module';
 
 @Module({
   imports: [
@@ -32,8 +32,9 @@ import { HubModule } from './hub/hub.module';
     LanguagesModule,
     CountriesModule,
     HubModule,
+    LexemeModule,
   ],
   controllers: [],
-  providers: [AppService],
+  providers: [],
 })
 export class AppModule {}

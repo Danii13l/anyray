@@ -4,9 +4,11 @@ import {
   PrimaryGeneratedColumn,
   ManyToOne,
   JoinColumn,
+  OneToMany,
 } from 'typeorm';
 import { User } from '../../users/entities/user.entity';
 import { Language } from '../../languages/entities/language.entity';
+import { Lexeme } from 'src/lexeme/entities/lexeme.entity';
 
 export enum LanguageLevel {
   BEGINNER = 'beginner',
@@ -37,4 +39,8 @@ export class Hub {
     nullable: false,
   })
   languageLevel: LanguageLevel;
+
+  // One-to-Many relationships
+  @OneToMany(() => Lexeme, (lexeme) => lexeme.hub)
+  lexemes: Lexeme[];
 }

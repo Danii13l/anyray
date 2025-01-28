@@ -39,4 +39,11 @@ export class HubService {
     // Save and return the newly created Hub
     return this.hubRepository.save(newHub);
   }
+
+  async findById(id: string): Promise<Hub> {
+    return this.hubRepository.findOne({
+      where: { id },
+      relations: ['targetLanguage', 'user'],
+    });
+  }
 }
